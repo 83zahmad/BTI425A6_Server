@@ -9,7 +9,8 @@ dotenv.config();
 const userService = require("./user-service.js");
 
 const HTTP_PORT = process.env.PORT || 8080;
-passport.authenticate('jwt', { session: false })
+passport.authenticate('jwt', { session: false });
+app.use(express.static(__dirname + '/public'));
 
 // JSON Web Token Setup
 let ExtractJwt = passportJWT.ExtractJwt;
